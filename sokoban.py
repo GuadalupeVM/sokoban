@@ -49,11 +49,32 @@ class sokoban1:
                     print(columna, end = " ")
             print() 
             
-     
-            
-            
-          
-              
+    def moverDerecha(self):     #Funcion para los movimientos de Derecha
+        if self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna][self.muneco_fila+1]==1: #Personaje, epacio
+            self.mapa[self.muneco_columna][self.muneco_fila]=1
+            self.mapa[self.muneco_columna][self.muneco_fila+1]=0
+            self.muneco_fila+=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna][self.muneco_fila+1]==4:  #Personaje, meta
+            self.mapa[self.muneco_columna][self.muneco_fila]=1
+            self.mapa[self.muneco_columna][self.muneco_fila+1]=5
+            self.muneco_fila+=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna][self.muneco_fila+1]==2 and self.mapa[self.muneco_columna][self.muneco_fila+2]==1: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=1
+            self.mapa[self.muneco_columna][self.muneco_fila+1]=0  #personaje, caja, meta
+            self.mapa[self.muneco_columna][self.muneco_fila+2]=2
+            self.muneco_fila+=1
+                  
 
 juego=sokoban1()
 juego.imprimirmapa() 
+
+
+while True:              #crea el blucle hasta que se acabe el nivel o se slaga
+    juego.clear()
+    juego.imprimirmapa()
+    
+    a=input() #ingresa el movimento #lee el mviento 
+    if a=='d': #lee el moviemnto
+        juego.moverDerecha()  #hace el mieviento
+    if a=='q':
+        break
