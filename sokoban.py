@@ -1,3 +1,4 @@
+from os import system, name
 class sokoban1:
 
     def __init__(self): # Se coloca un constructor 
@@ -20,7 +21,13 @@ class sokoban1:
         [3, 3, 3 ,3 ,3, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3],
         [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
     ]
-
+    
+    def clear(self):
+        if name == 'nt': #win.
+            system ('cls')
+        else: 
+            system ('clear')
+ 
     def imprimirmapa (self):       #imprime mapa 
         for fila in self.mapa:
             for columna in fila:   #recorre cada elemnto de cada fila
@@ -41,6 +48,9 @@ class sokoban1:
                 else:
                     print(columna, end = " ")
             print() 
+            
+     
+            
             
           
               
