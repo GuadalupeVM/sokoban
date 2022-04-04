@@ -163,6 +163,16 @@ class sokoban1:
             self.mapa[self.muneco_columna][self.muneco_fila]=4
             self.mapa[self.muneco_columna][self.muneco_fila-1]=5
             self.mapa[self.muneco_columna][self.muneco_fila-2]=6
+            
+    def moverArriba(self):
+        if self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna-1][self.muneco_fila]==1:
+            self.mapa[self.muneco_columna][self.muneco_fila]=1
+            self.mapa[self.muneco_columna-1][self.muneco_fila]=0
+            self.muneco_columna-=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna-1][self.muneco_fila]==4:
+            self.mapa[self.muneco_columna][self.muneco_fila]=1
+            self.mapa[self.muneco_columna-1][self.muneco_fila]=5
+            self.muneco_columna-=1
         
 
 juego=sokoban1()
