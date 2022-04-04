@@ -173,7 +173,21 @@ class sokoban1:
             self.mapa[self.muneco_columna][self.muneco_fila]=1
             self.mapa[self.muneco_columna-1][self.muneco_fila]=5
             self.muneco_columna-=1
-        
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna-1][self.muneco_fila]==2 and self.mapa[self.muneco_columna-2][self.muneco_fila]==1: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=1
+            self.mapa[self.muneco_columna-1][self.muneco_fila]=0
+            self.mapa[self.muneco_columna-2][self.muneco_fila]=2
+            self.muneco_columna-=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna-1][self.muneco_fila]==2 and self.mapa[self.muneco_columna-2][self.muneco_fila]==4: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=1
+            self.mapa[self.muneco_columna-1][self.muneco_fila]=0
+            self.mapa[self.muneco_columna-2][self.muneco_fila]=6
+            self.muneco_columna-=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna-1][self.muneco_fila]==6 and self.mapa[self.muneco_columna-2][self.muneco_fila]==1: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=1
+            self.mapa[self.muneco_columna-1][self.muneco_fila]=5
+            self.mapa[self.muneco_columna-2][self.muneco_fila]=2
+            self.muneco_columna-=1
 
 juego=sokoban1()
 juego.imprimirmapa() 
