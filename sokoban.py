@@ -131,6 +131,34 @@ class sokoban1:
             self.mapa[self.muneco_columna][self.muneco_fila-1]=5
             self.mapa[self.muneco_columna][self.muneco_fila-2]=2
             self.muneco_fila-=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna][self.muneco_fila-1]==6 and self.mapa[self.muneco_columna][self.muneco_fila-2]==4: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=1
+            self.mapa[self.muneco_columna][self.muneco_fila-1]=5
+            self.mapa[self.muneco_columna][self.muneco_fila-2]=6
+            self.muneco_fila-=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==5 and self.mapa[self.muneco_columna][self.muneco_fila-1]==1: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=4
+            self.mapa[self.muneco_columna][self.muneco_fila-1]=0
+            self.muneco_fila-=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==5 and self.mapa[self.muneco_columna][self.muneco_fila-1]==4: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=4
+            self.mapa[self.muneco_columna][self.muneco_fila-1]=5
+            self.muneco_fila-=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==5 and self.mapa[self.muneco_columna][self.muneco_fila-1]==2 and self.mapa[self.muneco_columna][self.muneco_fila-2]==1: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=4
+            self.mapa[self.muneco_columna][self.muneco_fila-1]=0
+            self.mapa[self.muneco_columna][self.muneco_fila-2]=2
+            self.muneco_fila-=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==5 and self.mapa[self.muneco_columna][self.muneco_fila-1]==2 and self.mapa[self.muneco_columna][self.muneco_fila-2]==4: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=4
+            self.mapa[self.muneco_columna][self.muneco_fila-1]=0
+            self.mapa[self.muneco_columna][self.muneco_fila-2]=6
+            self.muneco_fila-=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==5 and self.mapa[self.muneco_columna][self.muneco_fila-1]==6 and self.mapa[self.muneco_columna][self.muneco_fila-2]==1: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=4
+            self.mapa[self.muneco_columna][self.muneco_fila-1]=5
+            self.mapa[self.muneco_columna][self.muneco_fila-2]=2
+            self.muneco_fila-=1
         
 
 juego=sokoban1()
