@@ -159,6 +159,10 @@ class sokoban1:
             self.mapa[self.muneco_columna][self.muneco_fila-1]=5
             self.mapa[self.muneco_columna][self.muneco_fila-2]=2
             self.muneco_fila-=1
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==5 and self.mapa[self.muneco_columna][self.muneco_fila-1]==6 and self.mapa[self.muneco_columna][self.muneco_fila-2]==4: 
+            self.mapa[self.muneco_columna][self.muneco_fila]=4
+            self.mapa[self.muneco_columna][self.muneco_fila-1]=5
+            self.mapa[self.muneco_columna][self.muneco_fila-2]=6
         
 
 juego=sokoban1()
