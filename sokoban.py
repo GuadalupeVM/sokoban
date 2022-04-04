@@ -200,5 +200,10 @@ while True:              #crea el blucle hasta que se acabe el nivel o se slaga
     a=input() #ingresa el movimento #lee el mviento 
     if a=='d': #lee el moviemnto
         juego.moverDerecha()  #hace el mieviento
+    elif a=='a':
+        juego.moverIzquierda()   
+    elif a=='w':
+        juego.moverArriba() 
+    elif a=='s':
     if a=='q':
         break
