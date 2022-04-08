@@ -329,8 +329,10 @@ while True:              #crea el blucle hasta que se acabe el nivel o se slaga
     juego.clear()
     juego.encontrarMuneco()
     juego.imprimirmapa()
-    
-    a=input() #ingresa el movimento
+
+    instrucciones = "d-Derecha\na-Izquierda\nw-Arriba\ns-Abajo\nq-Salir" # Instruciines el juego
+    print(instrucciones)  #Imprime las istrucciones del juego
+    movimientos = a= input("mover a: ") #ingresa el movimento
     if a=='d': #lee el moviemnto
         juego.moverDerecha()  #hace el mieviento
     elif a=='a':
