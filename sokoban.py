@@ -28,9 +28,19 @@ class sokoban1:
         self.mapa=self.traducirMapa(archivo)    #
         pass    
 
-    muneco_fila = 6    #encuentra la posicion del muñeco
-    muneco_columna = 4
+    
+    muneco_fila = 0    #encuentra la posicion del muñeco
+    muneco_columna = 0
     mapa=[]
+    
+
+    def encontrarMuneco(self):
+        for columna in range(0,len(self.mapa)):           #Funcion para encontar las coordenadas del muñeco
+            for fila in range(0, len(self.mapa[columna])):
+                if self.mapa[columna][fila]== 0:
+                    self.muneco_columna = columna
+                    self.muneco_fila = fila
+
     
 
 
