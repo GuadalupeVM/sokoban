@@ -350,3 +350,6 @@ while True:              #crea el blucle hasta que se acabe el nivel o se slaga
     if a=='q':
         
         break
+        
+   if juego.contarCajas() == 0:  #pasa a segundo mapa (2)
+        juego.mapa = juego.traducirMapa('mapa2.txt')
