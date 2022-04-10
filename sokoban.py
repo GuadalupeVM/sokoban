@@ -319,8 +319,14 @@ class sokoban1:
             self.mapa[self.muneco_columna+1][self.muneco_fila]=5
             self.mapa[self.muneco_columna+2][self.muneco_fila]=6
             self.muneco_columna+=1
-
-
+            
+    def contarCajas(self):
+        cajas=0
+        for  columna in self.mapa:     # encuentra el numero de cajas en el mapa 
+            for fila in columna:
+                if fila==2:
+                    cajas+=1
+        return cajas            
 
 
 juego=sokoban1('mapa1.txt') #crea el objeto de la clase
