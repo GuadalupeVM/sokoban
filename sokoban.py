@@ -330,6 +330,8 @@ class sokoban1:
 
 
 juego=sokoban1('mapa1.txt') #crea el objeto de la clase
+nivel=1
+
 
 while True:              #crea el blucle hasta que se acabe el nivel o se slaga
     juego.clear()
@@ -353,3 +355,13 @@ while True:              #crea el blucle hasta que se acabe el nivel o se slaga
         
    if juego.contarCajas() == 0:  #pasa a segundo mapa (2)
         juego.mapa = juego.traducirMapa('mapa2.txt')
+        print("Ganaste el nivel", str(nivel))
+        nivel+=1
+        b=input('Preciona cualquier tecla para continuar: ')
+        
+   if nivel >2:    
+        juego.clear()
+        print('Ganaste el juego', chr(129395), chr(129395))
+        break 
+    
+    
