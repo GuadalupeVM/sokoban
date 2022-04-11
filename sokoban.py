@@ -10,7 +10,7 @@ class sokoban1:
     #4 - Metas
 
     # Controles
-    # a - Izquirda
+    # a - Izquierda
     # d - Derecha
     # w - Arriba
     # s - Abajo
@@ -41,7 +41,7 @@ class sokoban1:
 
     def imprimirmapa (self):       #imprime mapa 
         for columna in self.mapa:     #recorre las filas del mapa 
-                                    #recorre cada elemnto de cada fila
+                                    #recorre cada elemento de cada fila
             for fila in columna:
                 if fila==3:
                     print(chr(129521), end=" ")  #Cambia de valor al 3 (pared)
@@ -323,17 +323,17 @@ nivel=1
 
 
 
-while True:              # crea el blucle hasta que se acabe el nivel o se slaga
+while True:              # crea el bucle hasta que se acabe el nivel o se salga
     juego.clear()
     juego.encontrarMuneco()
     juego.imprimirmapa()
 
     instrucciones = "Instrucciones:\nd-Derecha\na-Izquierda\nw-Arriba\ns-Abajo\nq-Salir" # Instruciines el juego
-    print(instrucciones)  #Imprime las istrucciones del juego
-    movimientos = a= input("mover a: ") #ingresa el movimento
+    print(instrucciones)  #Imprime las instrucciones del juego
+    movimientos = a= input("mover a: ") #ingresa el movimiento
                                                     
-    if a=='d': #lee el moviemnto
-        juego.moverDerecha()  #hace el mieviento
+    if a=='d': #lee el movimiento
+        juego.moverDerecha()  #hace el movimiento
     elif a=='a':
         juego.moverIzquierda()   
     elif a=='w':
@@ -356,4 +356,7 @@ while True:              # crea el blucle hasta que se acabe el nivel o se slaga
         print('Ganaste el juego', chr(129395), chr(129395))
         break 
     
+
+    
+
     
