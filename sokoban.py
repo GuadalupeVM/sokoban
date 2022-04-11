@@ -1,18 +1,9 @@
 from os import system, name
-    
-
-#archivo = open('mapa1.txt', mode='r')
-#texto = archivo.read()
-#archivo.close()
-#print(texto)
-
-#print(type(texto))
-
-from os import system, name
+from turtle import clear
     
 
 class sokoban1:
-#0 - Muñeco
+    #0 - Muñeco
     #1 - Espacio
     #2 - Caja
     #3 - Paredes
@@ -28,7 +19,6 @@ class sokoban1:
         self.mapa=self.traducirMapa(archivo)    #
         pass    
 
-    
     muneco_fila = 0    #encuentra la posicion del muñeco
     muneco_columna = 0
     mapa=[]
@@ -40,8 +30,6 @@ class sokoban1:
                 if self.mapa[columna][fila]== 0:
                     self.muneco_columna = columna
                     self.muneco_fila = fila
-
-    
 
 
 
@@ -228,7 +216,7 @@ class sokoban1:
             self.mapa[self.muneco_columna-1][self.muneco_fila]=5
             self.mapa[self.muneco_columna-2][self.muneco_fila]=2
             self.muneco_columna-=1
-        elif self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna-1][self.muneco_fila]==6 and self.mapa[self.muneco_columna-2][self.muneco_fila]==4: 
+        elif self.mapa[self.muneco_columna][self.muneco_fila]==0 and self.mapa[self.muneco_columna-1][self.muneco_fila]==6 and self.mapa[self.muneco_columna-2][self.muneco_fila]==4:   #movimiento q
             self.mapa[self.muneco_columna][self.muneco_fila]=1
             self.mapa[self.muneco_columna-1][self.muneco_fila]=5
             self.mapa[self.muneco_columna-2][self.muneco_fila]=6
@@ -319,28 +307,31 @@ class sokoban1:
             self.mapa[self.muneco_columna+1][self.muneco_fila]=5
             self.mapa[self.muneco_columna+2][self.muneco_fila]=6
             self.muneco_columna+=1
-            
+
     def contarCajas(self):
         cajas=0
         for  columna in self.mapa:     # encuentra el numero de cajas en el mapa 
             for fila in columna:
                 if fila==2:
                     cajas+=1
-        return cajas            
+        return cajas
 
 
-juego=sokoban1('mapa1.txt') #crea el objeto de la clase
+juego=sokoban1('mapa1.txt') # crea el objeto de la clase
+
 nivel=1
 
 
-while True:              #crea el blucle hasta que se acabe el nivel o se slaga
+
+while True:              # crea el blucle hasta que se acabe el nivel o se slaga
     juego.clear()
     juego.encontrarMuneco()
     juego.imprimirmapa()
 
-    instrucciones = "d-Derecha\na-Izquierda\nw-Arriba\ns-Abajo\nq-Salir" # Instruciines el juego
+    instrucciones = "Instrucciones:\nd-Derecha\na-Izquierda\nw-Arriba\ns-Abajo\nq-Salir" # Instruciines el juego
     print(instrucciones)  #Imprime las istrucciones del juego
     movimientos = a= input("mover a: ") #ingresa el movimento
+                                                    
     if a=='d': #lee el moviemnto
         juego.moverDerecha()  #hace el mieviento
     elif a=='a':
@@ -350,17 +341,17 @@ while True:              #crea el blucle hasta que se acabe el nivel o se slaga
     elif a=='s':
         juego.moverAbajo()
     if a=='q':
-        
         break
-        
-   if juego.contarCajas() == 0:  #pasa a segundo mapa (2)
+    if juego.contarCajas() == 0:  #pasa a segundo mapa (2)
+        juego.clear()
+        juego.imprimirmapa()
         juego.mapa = juego.traducirMapa('mapa2.txt')
         print("Ganaste el nivel", str(nivel))
         nivel+=1
         if nivel<3:
             b=input('Presiona cualquier tecla para continuar: ')
         
-   if nivel >2:    
+    if nivel >2:
         juego.clear()
         print('Ganaste el juego', chr(129395), chr(129395))
         break 
