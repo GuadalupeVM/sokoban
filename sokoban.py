@@ -357,7 +357,8 @@ while True:              #crea el blucle hasta que se acabe el nivel o se slaga
         juego.mapa = juego.traducirMapa('mapa2.txt')
         print("Ganaste el nivel", str(nivel))
         nivel+=1
-        b=input('Preciona cualquier tecla para continuar: ')
+        if nivel<3:
+            b=input('Presiona cualquier tecla para continuar: ')
         
    if nivel >2:    
         juego.clear()
